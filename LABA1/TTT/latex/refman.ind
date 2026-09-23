@@ -1,0 +1,20 @@
+\begin{theindex}
+
+  \item {game}
+    \subitem {TTT}, \hyperpage{6}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{7}
+  \item {main.cpp}, \hyperpage{7}
+    \subitem {main}, \hyperpage{7}
+
+  \indexspace
+
+  \item {TTT}, \hyperpage{5}
+    \subitem {game}, \hyperpage{6}
+  \item {TTT.cpp}, \hyperpage{8}
+  \item {TTT.h}, \hyperpage{8}
+
+\end{theindex}

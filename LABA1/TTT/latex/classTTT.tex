@@ -1,0 +1,56 @@
+\doxysection{TTT Class Reference}
+\label{classTTT}\index{TTT@{TTT}}
+
+
+Класс игры "{}Крестики-\/нолики"{} (Tic-\/\+Tac-\/\+Toe).  
+
+
+
+
+{\ttfamily \+\#include $<$TTT.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{classTTT_a01024fd54dc3a8c2c58ae538866411ae}{game}} ()
+\begin{DoxyCompactList}\small\item\em Запуск игрового процесса. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс игры "{}Крестики-\/нолики"{} (Tic-\/\+Tac-\/\+Toe). 
+
+Реализует консольную игру для двух игроков на поле 3x3. Игрок A играет символом \textquotesingle{}O\textquotesingle{}, игрок B — символом \textquotesingle{}X\textquotesingle{}.
+
+\begin{DoxyNote}{Note}
+Поле хранится как двумерный массив символов {\ttfamily char}\+[3]\+[3]. 
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+Класс не поддерживает игру против компьютера. 
+\end{DoxyWarning}
+
+
+\label{classTTT_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\index{TTT@{TTT}!game@{game}}
+\index{game@{game}!TTT@{TTT}}
+\doxysubsubsection{\texorpdfstring{game()}{game()}}
+{\footnotesize\ttfamily \label{classTTT_a01024fd54dc3a8c2c58ae538866411ae} 
+void TTT::\+game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Запуск игрового процесса. 
+
+Последовательно выполняет:
+\begin{DoxyEnumerate}
+\item Очистку поля.
+\item Ввод имён игроков.
+\item Отображение поля.
+\item Цикл ходов до победы одного из игроков.
+\item Объявление победителя. 
+\end{DoxyEnumerate}
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{TTT_8h}{TTT.\+h}}\item 
+\doxymbox{\hyperlink{TTT_8cpp}{TTT.\+cpp}}\end{DoxyCompactItemize}
