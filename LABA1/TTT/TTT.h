@@ -35,6 +35,11 @@ public:
      * 5. Объявление победителя.
      */
     void game();
+      /**
+     * @brief Отображение игрового поля в консоли.
+     * @param[in] field отображаемое поле 3x3
+     */
+    friend std::ostream& operator<<(std::ostream& os, TTT& t);
 
 private:
     std::string playerA;    ///< Имя игрока A (ходит первым, символ 'O')
@@ -58,7 +63,6 @@ private:
      * @brief Отображение игрового поля в консоли.
      * @param[in] field отображаемое поле 3x3
      */
-    void showf(char field[3][3]);
 
     /**
      * @brief Проверка условия победы.
@@ -70,6 +74,9 @@ private:
      * @return @c true, если кто-то победил, иначе @c false
      */
     bool win(char field[3][3]);
+    
+    bool isDraw(char field[3][3]);
+
 };
 
 #endif // TTT_H

@@ -21,32 +21,45 @@ void TTT::game() {
     std::cout << "Введите имя игрока B: ";
     std::cin >> playerB;
 
-    showf(field);
-
+    std::cout << *this;
+    bool gameOver = false;
     char choice = 'O';
-    while (win(field) == false) {
+    while (!gameOver) {
         if (choice == 'O') {
             std::cout << playerA << " делает ход\n";
-            choice = 'X';
         } else {
             std::cout << playerB << " делает ход\n";
-            choice = 'O';
         }
 
         int x, y;
-        do {
-            chp(&x, &y);
-        } while (field[x][y] != ' ');
+          chp(&x, &y);
+            
+            while (field[x][y] != ' ') {
+                std::cout << "Эта ячейка уже занята! Выберите другую: ";
+                chp(&x, &y);
+            }
 
         field[x][y] = choice;
-        showf(field);
-    }
-
-    if (choice == 'X') {
-        std::cout << "Выиграл " << playerA << std::endl;
-    } else {
-        std::cout << "Выиграл " << playerB << std::endl;
-    }
+        std::cout << *this;
+    if (win(field)) {
+                std::cout << *this;
+                if (choice == 'X') {
+                    std::cout << "Выиграл " << playerB << "!\n";
+                }
+                else {
+                    std::cout << "Выиграл " << playerA << "!\n";
+                }
+                gameOver = true;
+            }
+            else if ( isDraw(field)) {
+                std::cout << *this << "Ничья!\n";
+                gameOver = true;
+            }
+            else {
+                // Смена игрока
+                choice = (choice == 'O') ? 'X' : 'O';
+            }
+        }
 }
 
 void TTT::chp(int* x, int* y) {
@@ -57,13 +70,14 @@ void TTT::chp(int* x, int* y) {
     } while (*x >= 3 || *y >= 3 || *x < 0 || *y < 0);
 }
 
-void TTT::showf(char field[3][3]) {
-    for (int i = 0; i < 3; i++) {
+std::ostream& operator<<(std::ostream& os, TTT& t){
+for (int i = 0; i < 3; i++) {
         for (int k = 0; k < 3; k++) {
-            printf("[ %c ]", field[i][k]);
+            os << "[" << t.field[i][k] << "]";
         }
-        std::cout << "\n";
+        os << "\n";
     }
+    return os;
 }
 
 bool TTT::win(char field[3][3]) {
@@ -101,3 +115,14 @@ bool TTT::win(char field[3][3]) {
 
     return false;
 }
+
+ bool TTT::isDraw(char field[3][3]) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (field[i][j] == ' ') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
