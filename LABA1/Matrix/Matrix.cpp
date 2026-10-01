@@ -114,8 +114,8 @@ Matrix Matrix::submatrix(int rowStart, int colStart,
     return result;
 }
 
-static bool almostEqual(double a, double b, double eps = 1e-9) {
-    return std::fabs(a - b) < eps;
+static bool almostEqual(double a, double b) {
+    return std::fabs(a - b) == 0;
 }
 
 bool Matrix::isSquare() const { return rows == cols; }
