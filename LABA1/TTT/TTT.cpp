@@ -65,7 +65,7 @@ void TTT::game() {
 void TTT::chp(int* x, int* y) {
     do {
         std::cout << "Выберите ячейку: \n";
-        scanf("%d %d", x, y);
+        std::cin >> *x >> *y;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     } while (*x >= 3 || *y >= 3 || *x < 0 || *y < 0);
 }
